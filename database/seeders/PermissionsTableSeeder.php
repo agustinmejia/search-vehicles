@@ -36,6 +36,8 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('vehicles_classes');
         Permission::generateFor('vehicles_types');
         Permission::generateFor('people');
+        Permission::generateFor('provinces');
+        Permission::generateFor('cities');
         Permission::generateFor('vehicles');
     }
 }

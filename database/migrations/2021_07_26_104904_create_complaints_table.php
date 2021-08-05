@@ -16,10 +16,13 @@ class CreateComplaintsTable extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->foreignId('vehicle_id')->nullable()->constrained('vehicles');
+            $table->foreignId('city_id')->nullable()->constrained('cities');
             $table->foreignId('person_id')->nullable()->constrained('people');
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('assigned_id')->nullable()->constrained('users');
+            $table->string('type')->nullable();
             $table->text('address')->nullable();
+            $table->text('address_zone')->nullable();
             $table->string('location')->nullable();
             $table->text('details')->nullable();
             $table->text('description')->nullable();

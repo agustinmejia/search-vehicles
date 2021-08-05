@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Controllers
+use App\Http\Controllers\ComplaintsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +27,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::resource('complaints', ComplaintsController::class);
+    Route::get('complaints/ajax/list', [ComplaintsController::class, 'list']);
 });
 
 // Clear cache

@@ -163,6 +163,42 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-07-26 12:22:03',
                 'updated_at' => '2021-07-26 12:37:40',
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'name' => 'provinces',
+                'slug' => 'provinces',
+                'display_name_singular' => 'Provincia',
+                'display_name_plural' => 'Provincias',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\Province',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-08-04 22:08:32',
+                'updated_at' => '2021-08-04 22:23:13',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'name' => 'cities',
+                'slug' => 'cities',
+                'display_name_singular' => 'Ciudad',
+                'display_name_plural' => 'Ciudades',
+                'icon' => 'voyager-milestone',
+                'model_name' => 'App\\Models\\City',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-08-04 22:09:08',
+                'updated_at' => '2021-08-04 22:20:59',
+            ),
         ));
         
         

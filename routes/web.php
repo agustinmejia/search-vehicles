@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Controllers
 use App\Http\Controllers\ComplaintsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::post('search', [HomeController::class, 'search']);
 
     Route::resource('complaints', ComplaintsController::class);
     Route::get('complaints/ajax/list', [ComplaintsController::class, 'list']);

@@ -27,6 +27,7 @@ class CreateComplaintsTable extends Migration
             $table->text('details')->nullable();
             $table->text('description')->nullable();
             $table->datetime('date')->nullable();
+            $table->string('status')->nullable()->default('activa');
             $table->timestamps();
             $table->softDeletes();
         });

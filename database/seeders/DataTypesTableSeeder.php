@@ -125,7 +125,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-07-26 11:53:13',
-                'updated_at' => '2021-07-26 12:38:57',
+                'updated_at' => '2021-08-09 22:48:30',
             ),
             6 => 
             array (
@@ -161,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-07-26 12:22:03',
-                'updated_at' => '2021-07-26 12:37:40',
+                'updated_at' => '2021-08-09 22:59:51',
             ),
             8 => 
             array (
@@ -198,6 +198,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-08-04 22:09:08',
                 'updated_at' => '2021-08-04 22:20:59',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'name' => 'permissions',
+                'slug' => 'permissions',
+                'display_name_singular' => 'Permiso',
+                'display_name_plural' => 'Permisos',
+                'icon' => 'voyager-list',
+                'model_name' => 'App\\Models\\Permission',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-08-09 22:18:43',
+                'updated_at' => '2021-08-09 22:18:43',
             ),
         ));
         

@@ -24,19 +24,25 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Persona Denunciante</label>
-                                    <select name="person_id " class="form-control select2" required>
+                                    <select name="person_id" class="form-control select2" required>
                                         <option value="">-- Selecciona a la persona denunciante --</option>
+                                        @foreach (\App\Models\Person::where('deleted_at', NULL)->get() as $person)
+                                        <option value="{{ $person->id }}">{{ $person->name }} {{ $person->first_name }} {{ $person->last_name }} - CI:{{ $person->dni }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Vehículo</label>
-                                    <select name="vehicle_id  " class="form-control select2" required>
+                                    <select name="vehicle_id" class="form-control select2" required>
                                         <option value="">-- Selecciona el vehículo --</option>
+                                        @foreach (\App\Models\Vehicle::with('brand', 'vehicles_type')->where('deleted_at', NULL)->get() as $vehicle)
+                                        <option value="{{ $vehicle->id }}">{{ $vehicle->brand->name }} {{ $vehicle->vehicles_type->name }}, {{ $vehicle->chassis_code }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Cuidad</label>
-                                    <select name="city_id  " class="form-control select2" required>
+                                    <select name="city_id" class="form-control select2" required>
                                         <option value="">-- Selecciona la ciudad del hecho --</option>
                                         @foreach (\App\Models\City::with('province')->where('deleted_at', NULL)->get() as $city)
                                         <option value="{{ $city->id }}">{{ $city->name }}, {{ $city->province->name }} - {{ $city->province->state }}</option>
@@ -47,17 +53,28 @@
                                     <label>Oficial Asignado</label>
                                     <select name="assigned_id" class="form-control select2" required>
                                         <option value="">-- Selecciona al ofical asignado al caso --</option>
+                                        @foreach (\App\Models\User::all() as $user)
+                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Tipo de Denuncia</label>
-                                    <select name="assigned_id" class="form-control" required>
+                                    <select name="type" class="form-control" required>
                                         <option value="Robo">Robo</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Fecha del Hecho</label>
-                                    <input type="date" class="form-control" name="date" value="{{ date('Y-m-d') }}" required>
+                                    <div class="row">
+                                        <div class="col-md-6" style="margin: 0px">
+                                            <label>Fecha del Hecho</label>
+                                            <input type="date" class="form-control" name="date" value="{{ date('Y-m-d') }}" required>
+                                        </div>
+                                        <div class="col-md-6" style="margin: 0px">
+                                            <label>Hora del Hecho</label>
+                                            <input type="time" class="form-control" name="time" value="{{ date('H:i') }}" required>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Dirección del Hecho</label>

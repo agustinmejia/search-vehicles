@@ -16,7 +16,6 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('brand_id')->nullable()->constrained('brands');
-            $table->foreignId('vehicles_class_id')->nullable()->constrained('vehicles_classes');
             $table->foreignId('vehicles_type_id')->nullable()->constrained('vehicles_types');
             $table->string('color')->nullable();
             $table->string('year')->nullable();

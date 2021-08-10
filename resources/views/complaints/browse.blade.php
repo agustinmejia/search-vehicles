@@ -69,10 +69,11 @@
         $(document).ready(function() {
             let columns = [
                 { data: 'id', title: 'id' },
-                // { data: 'cliente', title: 'Cliente' },
-                // { data: 'detalle', title: 'Detalle' },
-                // { data: 'fecha', title: 'Fecha' },
-                // { data: 'total', title: 'Total' },
+                { data: 'person', title: 'Denunciante' },
+                { data: 'assigned', title: 'Oficial asignado' },
+                { data: 'city', title: 'Localidad' },
+                { data: 'vehicle_class', title: 'Clase' },
+                { data: 'details', title: 'Detalles' },
                 { data: 'action', title: 'Acciones', orderable: false, searchable: false },
             ]
             customDataTable("{{ url('admin/complaints/ajax/list') }}/", columns);

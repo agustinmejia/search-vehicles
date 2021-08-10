@@ -15,6 +15,7 @@ class CreateVehiclesTypesTable extends Migration
     {
         Schema::create('vehicles_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('vehicles_class_id')->nullable()->constrained('vehicles_classes');
             $table->string('name')->nullable();
             $table->string('slug')->unique();
             $table->text('details')->nullable();

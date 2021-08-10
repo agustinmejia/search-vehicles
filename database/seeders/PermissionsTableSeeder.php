@@ -18,6 +18,7 @@ class PermissionsTableSeeder extends Seeder
             'browse_database',
             'browse_media',
             'browse_compass',
+            'browse_clear-cache',
         ];
 
         foreach ($keys as $key) {
@@ -31,6 +32,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('roles');
         Permission::generateFor('users');
         Permission::generateFor('settings');
+        Permission::generateFor('permissions');
 
         Permission::generateFor('brands');
         Permission::generateFor('vehicles_classes');
@@ -39,5 +41,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('provinces');
         Permission::generateFor('cities');
         Permission::generateFor('vehicles');
+        Permission::generateFor('complaints');
     }
 }
